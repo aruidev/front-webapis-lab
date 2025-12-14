@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ES2022",
+        "rootDir": ".",
+        "outDir": "public",
+        "moduleResolution": "Bundler",
+        "lib": [
+            "es2022",
+            "dom"
+        ],
+        "sourceMap": false,
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "strict": true
+    },
+    "include": ["**/*.ts"]
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Cronómetro</title>
+	<style>
+		:root {
+			font-family: "Segoe UI", sans-serif;
+			background: #0f172a;
+			color: #e2e8f0;
+		}
+		body {
+			max-width: 420px;
+			margin: 48px auto;
+			padding: 24px;
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 16px;
+			box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+		}
+		h1 {
+			margin: 0 0 16px;
+			font-size: 24px;
+			letter-spacing: 0.01em;
+		}
+		.display {
+			font-variant-numeric: tabular-nums;
+			font-size: 48px;
+			font-weight: 700;
+			text-align: center;
+			padding: 12px 0;
+			margin-bottom: 12px;
+		}
+		.controls {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 8px;
+			margin-bottom: 16px;
+		}
+		button {
+			padding: 10px 12px;
+			border: 1px solid rgba(255, 255, 255, 0.16);
+			border-radius: 10px;
+			background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(14, 165, 233, 0.18));
+			color: inherit;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 120ms ease, box-shadow 120ms ease;
+		}
+		button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: grid;
+			gap: 6px;
+		}
+		li {
+			padding: 8px 10px;
+			border-radius: 10px;
+			background: rgba(255, 255, 255, 0.06);
+			font-variant-numeric: tabular-nums;
+		}
+		.hint {
+			margin-top: 12px;
+			font-size: 12px;
+			color: #94a3b8;
+		}
+	</style>
+</head>
+<body>
+	<h1>Cronómetro</h1>
+	<div id="crono-display" class="display" aria-live="polite">00:00.0</div>
+
+	<div class="controls">
+		<button id="crono-start" type="button">Start / Marca</button>
+		<button id="crono-pause" type="button">Pausa</button>
+		<button id="crono-reset" type="button">Reset</button>
+	</div>
+
+	<h2>Marcas</h2>
+	<ul id="crono-marcas"></ul>
+
+	<p class="hint">El botón Start añade una marca cuando el cronómetro ya está corriendo.</p>
+
+	<script type="module" src="./crono.demo.js"></script>
+</body>
+</html>

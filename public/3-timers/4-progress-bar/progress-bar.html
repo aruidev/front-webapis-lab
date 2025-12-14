@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Barra de Progreso</title>
+	<style>
+		:root {
+			font-family: "Segoe UI", sans-serif;
+			background: #0b1224;
+			color: #e2e8f0;
+		}
+		body {
+			max-width: 720px;
+			margin: 40px auto;
+			padding: 0 20px 48px;
+			display: grid;
+			gap: 20px;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+		}
+		h1 {
+			margin: 0 0 12px;
+			letter-spacing: 0.01em;
+		}
+		.controls {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+			margin-bottom: 14px;
+		}
+		button {
+			padding: 10px 12px;
+			border: 1px solid rgba(255, 255, 255, 0.16);
+			border-radius: 10px;
+			background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(14, 165, 233, 0.18));
+			color: inherit;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 120ms ease, box-shadow 120ms ease;
+		}
+		button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+		}
+		#progress-container {
+			width: 100%;
+		}
+		.hint {
+			margin-top: 10px;
+			font-size: 12px;
+			color: #94a3b8;
+		}
+	</style>
+</head>
+<body>
+	<section class="card">
+		<h1>Barra de Progreso</h1>
+		<div class="controls">
+			<button id="pb-start" type="button">Simular carga</button>
+			<button id="pb-step" type="button">+10%</button>
+			<button id="pb-full" type="button">100%</button>
+			<button id="pb-reset" type="button">Reset</button>
+		</div>
+		<div id="progress-container"></div>
+		<p class="hint">Usa los botones para avanzar la barra. "Simular carga" hace pasos escalonados hasta 100%.</p>
+	</section>
+
+	<script type="module" src="./progress-bar.demo.js"></script>
+</body>
+</html>

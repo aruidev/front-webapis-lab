@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Media & Multimedia</title>
+	<style>
+		:root {
+			font-family: "Segoe UI", sans-serif;
+			background: #0b1224;
+			color: #e2e8f0;
+		}
+		body {
+			max-width: 960px;
+			margin: 36px auto;
+			padding: 0 20px 48px;
+			display: grid;
+			gap: 24px;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+		}
+		h1, h2, h3 {
+			margin: 0 0 12px;
+			letter-spacing: 0.01em;
+		}
+		.grid {
+			display: grid;
+			gap: 12px;
+		}
+		.media-panel {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 12px;
+			align-items: start;
+		}
+		video, canvas, audio {
+			width: 100%;
+			border-radius: 12px;
+			background: #0f172a;
+			border: 1px solid rgba(255, 255, 255, 0.08);
+		}
+		.controls {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			align-items: center;
+		}
+		button {
+			padding: 10px 12px;
+			border: 1px solid rgba(255, 255, 255, 0.16);
+			border-radius: 10px;
+			background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(14, 165, 233, 0.18));
+			color: inherit;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 120ms ease, box-shadow 120ms ease;
+		}
+		button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+		}
+		label {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 14px;
+			color: #cbd5e1;
+		}
+		input[type="range"] {
+			accent-color: #38bdf8;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: grid;
+			gap: 6px;
+		}
+		li {
+			padding: 8px 10px;
+			border-radius: 10px;
+			background: rgba(255, 255, 255, 0.06);
+			font-variant-numeric: tabular-nums;
+		}
+		.hint {
+			margin-top: 8px;
+			color: #94a3b8;
+			font-size: 13px;
+		}
+		.status {
+			margin-top: 8px;
+			font-size: 14px;
+			color: #e2e8f0;
+		}
+	</style>
+</head>
+<body>
+	<section class="card">
+		<h1>Media API (cámara, brillo, foto, grabación)</h1>
+		<div class="media-panel">
+			<div class="grid">
+				<video id="video" autoplay playsinline muted></video>
+				<canvas id="canvas"></canvas>
+				<audio id="audio" controls></audio>
+			</div>
+			<div class="grid">
+				<div class="controls">
+					<button id="start-cam" type="button">Iniciar cámara</button>
+					<button id="take-photo" type="button">Tomar foto</button>
+					<button id="rec-start" type="button">Grabar audio</button>
+					<button id="rec-stop" type="button">Detener grabación</button>
+				</div>
+				<label>
+					Brillo
+					<input id="brillo" type="range" min="0" max="255" value="128" />
+				</label>
+				<div>
+					<h3>Dispositivos</h3>
+					<ul id="devices"></ul>
+				</div>
+				<p class="hint">Necesitarás otorgar permisos de cámara/micrófono para ver nombres y usar captura.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="card">
+		<h2>Controles Multimedia personalizados</h2>
+		<div class="grid">
+			<video id="media" preload="metadata" playsinline poster="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.jpg">
+				<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+				Tu navegador no soporta el vídeo.
+			</video>
+			<div class="controls">
+				<button id="play-btn" type="button">Play</button>
+				<button id="pause-btn" type="button">Pausa</button>
+				<button id="toggle-btn" type="button">Play/Pausa</button>
+				<button id="forward-btn" type="button">+5s</button>
+				<button id="backward-btn" type="button">-5s</button>
+				<button id="volup-btn" type="button">Vol +</button>
+				<button id="voldown-btn" type="button">Vol -</button>
+			</div>
+			<div id="status" class="status">Pausado | 0.0s / ?s | Vol: 100%</div>
+			<p class="hint">Los botones controlan el vídeo mediante la librería multimedia; la barra de estado se actualiza en cada evento.</p>
+		</div>
+	</section>
+
+	<script type="module" src="./media.demo.js"></script>
+	<script type="module" src="./multimedia.demo.js"></script>
+</body>
+</html>

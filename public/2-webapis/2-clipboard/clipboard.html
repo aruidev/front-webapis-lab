@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Clipboard API</title>
+	<style>
+		:root {
+			font-family: "Segoe UI", sans-serif;
+			background: #0b1224;
+			color: #e2e8f0;
+		}
+		body {
+			max-width: 760px;
+			margin: 40px auto;
+			padding: 0 20px 48px;
+			display: grid;
+			gap: 24px;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+		}
+		h1 {
+			margin: 0 0 12px;
+			letter-spacing: 0.01em;
+		}
+		.controls {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+			margin-bottom: 12px;
+		}
+		button {
+			padding: 10px 12px;
+			border: 1px solid rgba(255, 255, 255, 0.16);
+			border-radius: 10px;
+			background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(14, 165, 233, 0.18));
+			color: inherit;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 120ms ease, box-shadow 120ms ease;
+		}
+		button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+		}
+		.panel {
+			padding: 14px;
+			border-radius: 12px;
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			background: rgba(255, 255, 255, 0.04);
+		}
+		#input {
+			min-height: 100px;
+		}
+		#output {
+			min-height: 140px;
+		}
+		.hint {
+			margin-top: 10px;
+			font-size: 12px;
+			color: #94a3b8;
+		}
+	</style>
+</head>
+<body>
+	<section class="card">
+		<h1>Clipboard</h1>
+		<div class="controls">
+			<button id="copy-btn" type="button">Copiar</button>
+			<button id="paste-btn" type="button">Pegar</button>
+		</div>
+		<div id="input" class="panel" contenteditable="true">
+			<h3>Texto de ejemplo</h3>
+			<p>Puedes editar este bloque y copiarlo como HTML.</p>
+			<ul>
+				<li>Elemento de lista 1</li>
+				<li>Elemento de lista 2</li>
+			</ul>
+		</div>
+		<div class="hint">El botón Copiar usa la Clipboard API para copiar HTML + texto plano. Pegar intentará insertar HTML; si no hay, pegará texto.</div>
+	</section>
+
+	<section class="card">
+		<h2>Salida</h2>
+		<div id="output" class="panel"></div>
+	</section>
+
+	<script type="module" src="./clipboard.demo.js"></script>
+</body>
+</html>

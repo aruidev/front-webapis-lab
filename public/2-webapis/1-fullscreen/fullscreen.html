@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Fullscreen</title>
+	<style>
+		:root {
+			font-family: "Segoe UI", sans-serif;
+			background: #0b1224;
+			color: #e2e8f0;
+		}
+		body {
+			max-width: 780px;
+			margin: 40px auto;
+			padding: 0 20px 48px;
+			display: grid;
+			gap: 24px;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+		}
+		h1 {
+			margin: 0 0 12px;
+			letter-spacing: 0.01em;
+		}
+		.controls {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			margin-bottom: 14px;
+		}
+		button {
+			padding: 10px 12px;
+			border: 1px solid rgba(255, 255, 255, 0.16);
+			border-radius: 10px;
+			background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(14, 165, 233, 0.18));
+			color: inherit;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 120ms ease, box-shadow 120ms ease;
+		}
+		button:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+		}
+		#fs-target {
+			position: relative;
+			min-height: 300px;
+			border-radius: 14px;
+			border: 1px dashed rgba(255, 255, 255, 0.25);
+			background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.2), transparent 45%),
+									radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.18), transparent 40%),
+									radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.16), transparent 40%),
+									#0f172a;
+			display: grid;
+			place-items: center;
+			padding: 16px;
+			color: #cbd5e1;
+			text-align: center;
+		}
+		#fs-target p {
+			max-width: 460px;
+			line-height: 1.5;
+			margin: 0;
+		}
+		.state {
+			font-size: 14px;
+			color: #cbd5e1;
+		}
+		.hint {
+			margin-top: 10px;
+			font-size: 12px;
+			color: #94a3b8;
+		}
+	</style>
+</head>
+<body>
+	<section class="card">
+		<h1>Fullscreen</h1>
+
+		<div id="fs-target">
+            <div class="controls">
+                <button id="fs-toggle" type="button">Pantalla completa</button>
+                <button id="fs-enter" type="button">Entrar</button>
+                <button id="fs-exit" type="button">Salir</button>
+                <span id="fs-state" class="state">Fullscreen inactivo</span>
+            </div>
+			<p>
+				Este contenedor es el objetivo para el modo pantalla completa. Usa los botones para entrar/salir o alternar. También
+				puedes pulsar Esc para salir.
+			</p>
+		</div>
+		<p class="hint">Algunos navegadores requieren interacción de usuario (click) para activar fullscreen.</p>
+	</section>
+
+	<script type="module" src="./fullscreen.demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demos Front Prep</title>
+	<style>
+		:root {
+			font-family: "Segoe UI", sans-serif;
+			background: #0b1224;
+			color: #e2e8f0;
+		}
+		body {
+			max-width: 900px;
+			margin: 40px auto;
+			padding: 0 20px 48px;
+			display: grid;
+			gap: 20px;
+		}
+		header {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			align-items: center;
+			justify-content: space-between;
+		}
+		h1 {
+			margin: 0;
+			letter-spacing: 0.01em;
+		}
+		.grid {
+			display: grid;
+			gap: 12px;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 14px;
+			padding: 16px;
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+		}
+		a {
+			color: #38bdf8;
+			text-decoration: none;
+			font-weight: 600;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: grid;
+			gap: 8px;
+		}
+		.hint {
+			color: #94a3b8;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Demos Front Prep</h1>
+		<span class="hint">Accesos rápidos a todas las demos</span>
+	</header>
+
+	<section class="card grid">
+		<h2>Web APIs</h2>
+		<ul>
+			<li><a href="./2-webapis/1-fullscreen/fullscreen.html">Fullscreen</a></li>
+			<li><a href="./2-webapis/2-clipboard/clipboard.html">Clipboard</a></li>
+			<li><a href="./2-webapis/3-canvas/canvas.html">Canvas</a></li>
+			<li><a href="./2-webapis/4-svg/svg.html">SVG</a></li>
+			<li><a href="./2-webapis/5-media/media.html">Media & Multimedia</a></li>
+		</ul>
+	</section>
+
+	<section class="card grid">
+		<h2>Timers / Gráficos</h2>
+		<ul>
+			<li><a href="./3-timers/1-crono/crono.html">Cronómetro</a></li>
+			<li><a href="./3-timers/2-graphic-bars/graphic-bars.html">Gráfico de barras</a></li>
+			<li><a href="./3-timers/3-graphic-circle/graphic-circle.html">Gráfico de pastel</a></li>
+			<li><a href="./3-timers/4-progress-bar/progress-bar.html">Barra de progreso</a></li>
+		</ul>
+	</section>
+
+	<section class="card grid">
+		<h2>Notas</h2>
+		<p class="hint">Cada demo carga su módulo ES compilado (.js) y puede requerir permisos (p.ej., cámara/micrófono en Media).</p>
+	</section>
+</body>
+</html>
